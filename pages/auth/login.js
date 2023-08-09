@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { motion } from "framer-motion";
@@ -22,7 +22,9 @@ const upVariant = {
 
 const Login = () => {
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const { status } = useSession();
   const router = useRouter();
   const { callbackUrl } = router.query;
   // console.log(callbackUrl);
@@ -63,6 +65,7 @@ const Login = () => {
   }
 
   async function onSubmit(values) {
+    setLoading(true);
     const status = await signIn("credentials", {
       redirect: false,
       username: values.username,
@@ -71,6 +74,7 @@ const Login = () => {
     });
 
     if (status.ok) {
+      setLoading;
       router.push(callbackUrl ? callbackUrl : "/");
     } else {
       console.log(status.error);
@@ -80,6 +84,7 @@ const Login = () => {
         formik.errors.username = "No user found with that username";
       }
     }
+    setLoading(false);
   }
 
   return (
@@ -136,8 +141,12 @@ const Login = () => {
                 {formik.errors.password}
               </div>
             )}
-            <button type="submit" className="buttons">
-              Log In
+            <button
+              disabled={loading}
+              type="submit"
+              className={loading ? "disabled" : "buttons"}
+            >
+              {loading ? "Loading..." : "Sign In"}
             </button>
           </form>
         </div>
