@@ -113,7 +113,7 @@ export async function getServerSideProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions);
   const role = context.params.role;
   const course = context.params.course;
-  const response = await fetch(`http://localhost:3000/api/course/${course}`);
+  const response = await fetch(`https://icodeproject.vercel.app/api/course/${course}`);
   const data = await response.json();
 
   const roles = [
