@@ -150,14 +150,6 @@ body {
 .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
 }
-@keyframes moveUpDown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+svg.MuiSvgIcon-root {
+  fill: white !important;
 }
