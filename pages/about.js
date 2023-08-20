@@ -152,6 +152,15 @@ const about = () => {
                 )
             )}
           </div>
+          <h3 className="text-2xl my-12 font-bold">Content Creator</h3>
+          <div className="flex flex-wrap justify-evenly gap-6 border-b-2 py-8 border-black border-dashed">
+            {team.map(
+              (member) =>
+                member.role === "Content Creator" && (
+                  <MemberCard key={member.name} {...member} />
+                )
+            )}
+          </div>
         </div>
       </section>
     </main>

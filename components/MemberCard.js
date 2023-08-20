@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa6";
+import { FaFacebook, FaLinkedin, FaGoogle } from "react-icons/fa6";
 
 const upVariant = {
   hide: {
@@ -18,7 +18,7 @@ const upVariant = {
   },
 };
 
-const MemberCard = ({ name, title, facebook, insta, whats, img }) => {
+const MemberCard = ({ name, title, facebook, linked, gmail, img }) => {
   // const [show, setShow] = useState(false);
   return (
     <motion.div
@@ -54,14 +54,14 @@ const MemberCard = ({ name, title, facebook, insta, whats, img }) => {
             <FaFacebook size={16} />
           </div>
         </a>
-        <a href={insta} target="_blank" rel="noopener noreferrer">
+        <a href={linked} target="_blank" rel="noopener noreferrer">
           <div className="w-12 h-12 flex justify-center items-center">
-            <FaInstagram size={16} />
+            <FaLinkedin size={16} />
           </div>
         </a>
-        <a href={whats} target="_blank" rel="noopener noreferrer">
+        <a href={`mailto:${gmail}`}>
           <div className="w-12 h-12 flex justify-center items-center">
-            <FaWhatsapp size={16} />
+            <FaGoogle size={16} />
           </div>
         </a>
       </motion.div>
