@@ -14,8 +14,8 @@ export default async function handler(req, res) {
       return res
         .status(404)
         .json({ error: "Name must be more then 3 chars long" });
-    } else if (name.includes(" ") || name === session.user.name) {
-      return res.status(404).json({ error: "Invalid Name" });
+    } else if (name === session.user.name) {
+      return res.status(404).json({ error: "You already have that name" });
     }
 
     try {

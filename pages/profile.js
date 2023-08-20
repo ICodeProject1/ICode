@@ -24,6 +24,7 @@ const Profile = () => {
   const { data: session, update } = useSession({
     required: true,
   });
+  // console.log(session);
   const [name, setName] = useState("");
   const [changeName, setChangeName] = useState(false);
   const [loadingName, setLoadingName] = useState(false);

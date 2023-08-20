@@ -63,15 +63,15 @@ const about = () => {
                 <div className="w-10 h-9 flex items-center justify-center rounded-2xl bg-[#d63031]">
                   <FaPeopleGroup className="w-5 h-4" />
                 </div>
-                <h3 className="text-2xl font-bold">24+</h3>
+                <h3 className="text-2xl font-bold">100+</h3>
                 <p className="tracking-wider">Staff</p>
               </div>
               <div className="p-8 flex flex-col items-center justify-between h-[200px] bg-[#17192f] w-1/3 rounded-xl basis-[200px]">
                 <div className="w-10 h-9 flex items-center justify-center rounded-2xl bg-[#00b894]">
                   <FaGraduationCap className="w-5 h-4" />
                 </div>
-                <h3 className="text-2xl font-bold">9+</h3>
-                <p className="tracking-wider">Certificates</p>
+                <h3 className="text-2xl font-bold">60+</h3>
+                <p className="tracking-wider">Courses</p>
               </div>
               <div className="p-8 flex flex-col items-center justify-between h-[200px] bg-[#17192f] w-1/3 rounded-xl basis-[200px]">
                 <div className="w-10 h-9 flex items-center justify-center rounded-2xl ">

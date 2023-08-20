@@ -12,12 +12,12 @@ export default async function handler(req, res) {
     const {
       starting,
       attendance,
-      final,
       bonus,
       tasks,
       attitude,
       name,
       role,
+      session: sessionNumber,
       newTable,
     } = req.body;
     try {
@@ -27,12 +27,12 @@ export default async function handler(req, res) {
           {
             starting,
             attendance,
-            final,
             bonus,
             tasks,
             attitude,
             name,
             role,
+            session: sessionNumber,
             newTable,
           }
         );
@@ -42,6 +42,7 @@ export default async function handler(req, res) {
       }
     } catch (error) {
       res.status(404).json({ error });
+      console.log(error);
     }
   }
 

@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
       if (session.user.role === "admin") {
-        const messages = await Message.find();
+        const messages = await Message.find().sort({ createdAt: -1 });
         res.status(201).json({ status: true, messages });
       }
     } catch (error) {
@@ -29,6 +29,18 @@ export default async function handler(req, res) {
         message,
       });
       res.status(201).json({ status: true, response });
+    } catch (error) {
+      res.status(404).json({ error });
+    }
+  }
+  if (req.method === "DELETE") {
+    if (!req.body) return res.status(404).json({ error: "No data found" });
+    const { id } = req.body;
+    try {
+      if (session.user.role === "admin") {
+        await Message.findByIdAndDelete(id);
+        res.status(201).json({ status: true });
+      }
     } catch (error) {
       res.status(404).json({ error });
     }

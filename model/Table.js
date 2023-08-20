@@ -4,11 +4,11 @@ const tableSchema = new Schema({
   name: String,
   starting: Number,
   attendance: Number,
-  final: Number,
   bonus: Number,
   tasks: Number,
   attitude: Number,
   role: String,
+  session: Number,
   newTable: Boolean,
 });
 

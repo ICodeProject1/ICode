@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
 import {
@@ -61,12 +62,14 @@ export default function Home() {
               user-friendly interface and can provide personalized learning
               paths and certificates.
             </p>
-            <button
-              type="button"
-              className="text-sm w-fit font-light px-6 py-3 bg-white text-black hover:text-white hover:bg-transparent border border-white transition-colors duration-300"
-            >
-              Get Started
-            </button>
+            <Link href="/auth/login">
+              <button
+                type="button"
+                className="text-sm w-fit font-light px-6 py-3 bg-white text-black hover:text-white hover:bg-transparent border border-white transition-colors duration-300"
+              >
+                Get Started
+              </button>
+            </Link>
           </motion.div>
           <div className="md:w-1/2 animate-moveUpDown">
             <Image src="/home.png" alt="home" width={600} height={400} />
@@ -89,12 +92,6 @@ export default function Home() {
               building, HR, and organizational success for a well-rounded
               career.
             </p>
-            <button
-              type="button"
-              className="text-sm w-fit font-light px-6 py-3 bg-white text-black hover:text-white hover:bg-transparent border border-white transition-colors duration-300"
-            >
-              Learn More
-            </button>
           </motion.div>
           <motion.div
             variants={upVariant}

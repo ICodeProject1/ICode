@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { nav } from "../../utils/team";
 import { motion } from "framer-motion";
+import { FaTrash } from "react-icons/fa6";
+import Swal from "sweetalert2";
 
 const upVariant = {
   hide: {
@@ -27,8 +29,38 @@ const Messages = ({ role }) => {
   const fetcher = (api) => fetch(api).then((res) => res.json());
 
   const { data, error, isLoading } = useSWR("/api/message", fetcher, {
-    refreshInterval: 1000,
+    refreshInterval: 300,
   });
+
+  const handleDelete = async (id) => {
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "Do you want to delete this message?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    });
+    if (result.isConfirmed) {
+      const res = await fetch("/api/message", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        Swal.fire("Deleted!", "User has been deleted.", "success");
+        console.log(data);
+      } else {
+        Swal.fire("Error Ocurred!", "User has not been deleted.", "error");
+        console.log("error");
+      }
+    }
+  };
+
   return (
     <main className="flex flex-col md:flex-row min-h-screen md:h-screen third-bg">
       <div className="h-full">
@@ -56,7 +88,7 @@ const Messages = ({ role }) => {
           <h2 className="text-center text-4xl my-10">Loading...</h2>
         ) : (
           <>
-            {data ? (
+            {data.messages.length ? (
               data?.messages.map((message) => (
                 <motion.div
                   variants={upVariant}
@@ -64,12 +96,23 @@ const Messages = ({ role }) => {
                   whileInView="show"
                   viewport={{ once: true }}
                   key={message._id}
-                  className="bg-purple-700 p-8 rounded-3xl my-10"
+                  className="bg-purple-700 p-8 rounded-3xl my-10 relative"
                 >
-                  <p className="text-2xl my-10">Name: {message.name}</p>
-                  <p className="text-2xl my-10">Whatsapp: {message.whatsapp}</p>
-                  <p className="text-2xl my-10">Email: {message.email}</p>
-                  <p className="text-2xl my-10">Message: {message.message}</p>
+                  <p className="sm:text-2xl my-10">Name: {message.name}</p>
+                  <p className="sm:text-2xl my-10">
+                    Whatsapp: {message.whatsapp}
+                  </p>
+                  <p className="sm:text-2xl my-10">Email: {message.email}</p>
+                  <p className="sm:text-2xl my-10">
+                    Message: {message.message}
+                  </p>
+                  <div className="absolute top-10 right-10">
+                    <FaTrash
+                      className="cursor-pointer"
+                      onClick={() => handleDelete(message._id)}
+                      size={20}
+                    />
+                  </div>
                 </motion.div>
               ))
             ) : (

@@ -5,6 +5,10 @@ const messageSchema = new Schema({
   whatsapp: String,
   email: String,
   message: String,
+  createdAt: {
+    type: Date,
+    default: () => new Date(),
+  },
 });
 
 const Message = models.message || model("message", messageSchema);

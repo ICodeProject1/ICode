@@ -4,7 +4,6 @@ import { getServerSession } from "next-auth";
 import SideNav from "../../components/SideNav";
 import Swal from "sweetalert2";
 
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
@@ -57,7 +56,11 @@ function EditToolbar(props) {
 
   return (
     <GridToolbarContainer>
-      <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
+      <Button
+        color="primary"
+        startIcon={<AddIcon className="add-icon" />}
+        onClick={handleClick}
+      >
         Add User
       </Button>
     </GridToolbarContainer>
@@ -67,6 +70,7 @@ function EditToolbar(props) {
 const Table = ({ role }) => {
   const [loading, setLoading] = useState(false);
   const [rows, setRows] = useState([]);
+  const [totalRows, setTotalRows] = useState([]);
   const [rowModesModel, setRowModesModel] = useState({});
 
   useEffect(() => {
@@ -76,6 +80,138 @@ const Table = ({ role }) => {
       const data = await res.json();
       if (res.ok) {
         setRows(data);
+        const names = data
+          .map((el) => el.name)
+          .filter((el, i, arr) => (i === arr.lastIndexOf(el) ? true : false));
+        setTotalRows(
+          names.map((name) => {
+            let user;
+            user = data.find((el) => el.name === name && el.session === 1);
+            const sessionOne = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 2);
+            const sessionTwo = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 3);
+            const sessionThree = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 4);
+            const sessionFour = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 5);
+            const sessionFive = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 6);
+            const sessionSix = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 7);
+            const sessionSeven = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 8);
+            const sessionEight = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 9);
+            const sessionNine = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 10);
+            const sessionTen = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 11);
+            const sessionEleven = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+
+            user = data.find((el) => el.name === name && el.session === 12);
+            const sessionTwelve = user
+              ? user.starting +
+                user.attendance +
+                user.bonus +
+                user.tasks +
+                user.attitude
+              : 0;
+            return {
+              name,
+              _id: data.find((el) => el.name === name)._id,
+              role: data.find((el) => el.name === name).role,
+              "session-1": sessionOne,
+              "session-2": sessionTwo,
+              "session-3": sessionThree,
+              "session-4": sessionFour,
+              "session-5": sessionFive,
+              "session-6": sessionSix,
+              "session-7": sessionSeven,
+              "session-8": sessionEight,
+              "session-9": sessionNine,
+              "session-10": sessionTen,
+              "session-11": sessionEleven,
+              "session-12": sessionTwelve,
+            };
+          })
+        );
       } else {
         console.log(res);
       }
@@ -137,7 +273,23 @@ const Table = ({ role }) => {
 
   const processRowUpdate = async (newRow) => {
     const updatedRow = { ...newRow, newTable: false };
+    console.log(newRow);
     setRows(rows.map((row) => (row._id === newRow._id ? updatedRow : row)));
+    setTotalRows(
+      totalRows.map((el) =>
+        el.name === newRow.name
+          ? {
+              ...el,
+              [`session-${newRow.session}`]:
+                newRow.starting +
+                newRow.attendance +
+                newRow.bonus +
+                newRow.tasks +
+                newRow.attitude,
+            }
+          : el
+      )
+    );
     const res = await fetch(`/api/table/${newRow._id}`, {
       method: "PUT",
       headers: {
@@ -178,15 +330,7 @@ const Table = ({ role }) => {
       headerAlign: "left",
       align: "left",
     },
-    {
-      field: "final",
-      headerName: "Final Points",
-      type: "number",
-      width: 150,
-      editable: true,
-      headerAlign: "left",
-      align: "left",
-    },
+
     {
       field: "bonus",
       headerName: "Bonus Points",
@@ -233,6 +377,15 @@ const Table = ({ role }) => {
       },
     },
     {
+      field: "session",
+      headerName: "Session",
+      type: "number",
+      width: 150,
+      editable: true,
+      headerAlign: "left",
+      align: "left",
+    },
+    {
       field: "role",
       headerName: "Role",
       width: 100,
@@ -256,13 +409,13 @@ const Table = ({ role }) => {
         if (isInEditMode) {
           return [
             <GridActionsCellItem
-              icon={<SaveIcon />}
+              icon={<SaveIcon className="action-icon" />}
               label="Save"
               color="#000"
               onClick={handleSaveClick(id)}
             />,
             <GridActionsCellItem
-              icon={<CancelIcon />}
+              icon={<CancelIcon className="action-icon" />}
               label="Cancel"
               className="text-red-600"
               onClick={handleCancelClick(id)}
@@ -289,6 +442,143 @@ const Table = ({ role }) => {
     },
   ];
 
+  const secondColumns = [
+    { field: "name", headerName: "Name", width: 180 },
+    {
+      field: "role",
+      headerName: "Role",
+      type: "singleSelect",
+      valueOptions: ["hr", "pr", "oc", "cb", "mm", "tech"],
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+      valueFormatter: (params) => {
+        return params.value.toUpperCase();
+      },
+    },
+    {
+      field: "total",
+      headerName: "Total",
+      type: "number",
+      width: 150,
+      headerAlign: "left",
+      align: "left",
+      valueGetter: (params) => {
+        return (
+          +params.row["session-1"] +
+          +params.row["session-2"] +
+          +params.row["session-3"] +
+          +params.row["session-4"] +
+          +params.row["session-5"] +
+          +params.row["session-6"] +
+          +params.row["session-7"] +
+          +params.row["session-8"] +
+          +params.row["session-9"] +
+          +params.row["session-10"] +
+          +params.row["session-11"] +
+          +params.row["session-12"]
+        );
+      },
+    },
+
+    {
+      field: "session-1",
+      headerName: "Session 1",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-2",
+      headerName: "Session 2",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-3",
+      headerName: "Session 3",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-4",
+      headerName: "Session 4",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-5",
+      headerName: "Session 5",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-6",
+      headerName: "Session 6",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-7",
+      headerName: "Session 7",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-8",
+      headerName: "Session 8",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-9",
+      headerName: "Session 9",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-10",
+      headerName: "Session 10",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-11",
+      headerName: "Session 11",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+    {
+      field: "session-12",
+      headerName: "Session 12",
+      type: "number",
+      width: 150,
+      align: "left",
+      headerAlign: "left",
+    },
+  ];
+
   return (
     <main className="flex flex-col md:flex-row min-h-screen third-bg">
       <div className="items-stretch">
@@ -296,12 +586,12 @@ const Table = ({ role }) => {
       </div>
       <div className="flex-1 py-20 px-10 max-w-full">
         <h1 className="text-center text-5xl">All The Users Points</h1>
-        <motion.Box
+        <motion.div
           variants={upVariant}
           initial="hide"
           whileInView="show"
           viewport={{ once: true }}
-          className="w-full h-[600px] md:h-full grid grid-cols-1 mt-10 md:mt-4"
+          className="w-full h-[600px] md:h-1/2 grid grid-cols-1 mt-10 md:mt-4"
         >
           {loading ? (
             <h2 className="text-center text-2xl mt-10">Loading...</h2>
@@ -330,7 +620,31 @@ const Table = ({ role }) => {
               }}
             />
           )}
-        </motion.Box>
+        </motion.div>
+        <motion.div
+          variants={upVariant}
+          initial="hide"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="w-full h-[600px] md:h-1/2 grid grid-cols-1 mt-10 md:my-4"
+        >
+          {loading ? (
+            <h2 className="text-center text-2xl mt-10">Loading...</h2>
+          ) : (
+            <DataGrid
+              getRowId={(row) => row._id}
+              rows={totalRows}
+              columns={secondColumns}
+              hideFooter={true}
+              sx={{
+                backgroundColor: "#101418",
+                color: "white",
+                fontSize: 18,
+                overflowX: "auto",
+              }}
+            />
+          )}
+        </motion.div>
       </div>
     </main>
   );

@@ -28,10 +28,10 @@ export default async function handler(req, res) {
           role: "hr",
           starting: 0,
           attendance: 0,
-          final: 0,
           bonus: 0,
           tasks: 0,
           attitude: 0,
+          session: 1,
           newTable: true,
           hi: "hello",
         });

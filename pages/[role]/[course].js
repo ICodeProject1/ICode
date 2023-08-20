@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { authOptions } from "../api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
+import connectMongo from "../../database/connection";
+import Course from "../../model/Course";
 import { motion } from "framer-motion";
 
 const upVariant = {
@@ -27,8 +29,9 @@ const staggerContainer = {
   },
 };
 
-const Course = ({ data }) => {
+const CourseData = ({ data }) => {
   const [show, setShow] = useState(true);
+  console.log(data);
   return (
     <motion.main
       variants={staggerContainer}
@@ -107,14 +110,14 @@ const Course = ({ data }) => {
   );
 };
 
-export default Course;
+export default CourseData;
 
 export async function getServerSideProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions);
+  connectMongo().catch(() => res.json({ error: "Connection failed" }));
   const role = context.params.role;
   const course = context.params.course;
-  const response = await fetch(`https://icodeproject.vercel.app/api/course/${course}`);
-  const data = await response.json();
+  const data = await Course.findById(course);
 
   const roles = [
     "admin",
@@ -167,7 +170,7 @@ export async function getServerSideProps(context) {
       session,
       // to secure data rendered
       role,
-      data,
+      data: JSON.parse(JSON.stringify(data)),
     },
   };
 }

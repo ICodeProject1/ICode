@@ -150,6 +150,18 @@ body {
 .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
 }
-svg.MuiSvgIcon-root {
+.MuiDataGrid-columnHeaderTitleContainer svg.MuiSvgIcon-root {
   fill: white !important;
+}
+.MuiDataGrid-menuIcon svg.MuiSvgIcon-root {
+  fill: white !important;
+}
+svg.MuiSvgIcon-root.action-icon {
+  fill: black !important;
+}
+svg.MuiSvgIcon-root.add-icon {
+  fill: #1976d2 !important;
+}
+.member-card:hover .socials {
+  @apply flex;
 }

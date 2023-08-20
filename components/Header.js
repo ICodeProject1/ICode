@@ -70,7 +70,8 @@ const Header = () => {
             <>
               <Link href="/profile">
                 <li className="text-lg font-medium hover:text-black transition-colors duration-300 px-2 py-4">
-                  Welcome {session.user.name ? session.user.name : "User"}
+                  Welcome{" "}
+                  {session.user.name ? session.user.name.split(" ")[0] : "User"}
                 </li>
               </Link>
               <li

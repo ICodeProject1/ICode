@@ -47,8 +47,8 @@ const Footer = () => {
         </div>
         <div className="my-4 sm:my-0 text-center sm:text-left">
           <h4 className="text-xl font-bold mb-4">Contact Us</h4>
-          <a href="tel:+201224884609">
-            <p className="text-sm">01224884609</p>
+          <a href="tel:+201223728219">
+            <p className="text-sm">01223728219</p>
           </a>
           <p className="text-sm mb-8">icodeproject01@gmail.com</p>
           <div className="flex">

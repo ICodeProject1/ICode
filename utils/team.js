@@ -53,15 +53,7 @@ export const team = [
     whats: "https://wa.me/+201224884609",
     img: "/MahmoudSaeed.jpg",
   },
-  {
-    name: "Yara Mohamed",
-    title: "Instructor Technical Sector",
-    role: "Technical",
-    facebook: "",
-    insta: "",
-    whats: "",
-    img: "/YaraMohamed.jpg",
-  },
+
   {
     name: "Ahmed Samy",
     title: "Instructor Technical Sector",
