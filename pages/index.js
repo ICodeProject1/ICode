@@ -237,7 +237,7 @@ export default function Home() {
                 <p className="text-xs opacity-80 text-center font-bold">
                   Founder & Supervisor
                 </p>
-                <p className="primary-bg p-8 text-center leading-8 mt-10">
+                <p className="text-xs font-bold md:text-base md:font-normal primary-bg p-8 text-center leading-8 mt-10">
                   I'm Abdelrahman Ezzat Third Year Student At Chemistry
                   Department at Faculty Of Science Alexandria University Looking
                   For All Ways To Make a better Community and I Can Say That My
@@ -268,7 +268,7 @@ export default function Home() {
                 <p className="text-xs opacity-80 text-center font-bold">
                   General Director
                 </p>
-                <p className="primary-bg p-8 text-center leading-8 mt-10">
+                <p className="text-xs font-bold md:text-base md:font-normal primary-bg p-8 text-center leading-8 mt-10">
                   I’m Hamss Mohsen, A graduate of Faculty of Science. I’m vice
                   president of 3ommar team I was head of public relations in
                   3ommar team and capstone project. I was a volunteer in Resala
@@ -288,7 +288,7 @@ export default function Home() {
                 <p className="text-xs opacity-80 text-center font-bold">
                   Project Manager
                 </p>
-                <p className="primary-bg p-8 text-center leading-8 mt-10">
+                <p className="text-xs font-bold md:text-base md:font-normal primary-bg p-8 text-center leading-8 mt-10">
                   I'm Gohar, a student in the College of Science, majoring in
                   Computer Science. I have various roles: I work as a member of
                   an organization called Empower, where I contribute to its
@@ -315,7 +315,7 @@ export default function Home() {
                 <p className="text-xs opacity-80 text-center font-bold">
                   Project Manager
                 </p>
-                <p className="primary-bg p-8 text-center leading-8 mt-10">
+                <p className="text-xs font-bold md:text-base md:font-normal primary-bg p-8 text-center leading-8 mt-10">
                   I am Moamen Saad, a student in the College of Science,
                   Department of Computer Science. I have been working as a
                   social media specialist for four years, helping various
@@ -346,7 +346,7 @@ export default function Home() {
                 <p className="text-xs opacity-80 text-center font-bold">
                   Project Manager
                 </p>
-                <p className="primary-bg p-8 text-center leading-8 mt-10">
+                <p className="text-xs font-bold md:text-base md:font-normal primary-bg p-8 text-center leading-8 mt-10">
                   I am Somaya, a college student studying computer science at
                   the College of Science. In addition to my studies, I hold
                   several positions such as General Director at 3ommarX Event ,

@@ -67,10 +67,10 @@ body {
 }
 
 .swiper_container {
-  margin-top: 30px;
-  height: 35rem;
-  padding: 2rem 0;
-  position: relative;
+  @apply py-8 h-fit relative mt-8;
+}
+.swiper-wrapper {
+  @apply pb-4 md:pb-12;
 }
 
 .swiper-slide-shadow-left,
