@@ -6,7 +6,7 @@ export const team = [
     facebook: "https://www.facebook.com/abdelrahmanezzat00",
     linked: "https://www.linkedin.com/in/abdelrahman-ezzat-502454247",
     gmail: "ezzatabdelrahman41@gmail.com",
-    img: "/AbdelrahmanEzzat.jpg",
+    img: "/AbdelrahmanEzzatt.jpg",
   },
   {
     name: "Hamss Mohsen",
@@ -41,7 +41,7 @@ export const team = [
     title: "Project Manager",
     role: "High Board",
     facebook: "",
-    linked: "",
+    linked: "https://www.linkedin.com/in/somaya-s-abdallah-996329289",
     gmail: "",
     img: "/SomayaSaeed.jpg",
   },

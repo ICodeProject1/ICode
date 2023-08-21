@@ -238,13 +238,22 @@ export default function Home() {
                   Founder & Supervisor
                 </p>
                 <p className="primary-bg p-8 text-center leading-8 mt-10">
-                  I'm Abdelrahman, a student at the Faculty of Science,
-                  Department of Chemistry, and I worked before that in
-                  Organization Organization member at Empower , OC and HR member
-                  at Circle for training and consultancy , PR member at 3ommar
-                  Team , PR member at Space E , PR board at 3ommar , PR board at
-                  Space E , Member at the Student union , President of ZeroOne
-                  Team , Founder at 3ommarX and Supervisor i-Code
+                  I'm Abdelrahman Ezzat Third Year Student At Chemistry
+                  Department at Faculty Of Science Alexandria University Looking
+                  For All Ways To Make a better Community and I Can Say That My
+                  Achievements are - Business Office Manager at ESDF - Public &
+                  International Relations Specialist at Remooz.events - Founder
+                  & Director at Whisper Team - Founder & Director at Zero One -
+                  Project Manager (PM) at SpaceE - Human Resources &
+                  Organization Member at Circle for Training & Consultancy -
+                  Founder & Director at 3ommar X Event - Founder at 3ommar
+                  Projects Community - Head Of Entities at Faculty of science
+                  Student Union - Former Presenter & Script writer at Enactus
+                  Alexandria University - Head of Human Resources Department at
+                  Hult Prize At Alexandria - Human Resources Manager (HR
+                  Specialist) at GMind - Manager & Director at 3ommar Team -
+                  Former Organisation member at Empower Hub - Former Participant
+                  at Mind Utopia - SMU
                 </p>
               </SwiperSlide>
               <SwiperSlide>
@@ -260,13 +269,11 @@ export default function Home() {
                   General Director
                 </p>
                 <p className="primary-bg p-8 text-center leading-8 mt-10">
-                  I'm Hamss, a student at the Faculty of Science, Department of
-                  Chemistry, and I worked before that in Organization
-                  Organization member at Empower , OC and HR member at Circle
-                  for training and consultancy , PR member at 3ommar Team , PR
-                  member at Space E , PR board at 3ommar , PR board at Space E ,
-                  Member at the Student union , President of ZeroOne Team , PR
-                  Director at 3ommarX and General Director i-Code
+                  I’m Hamss Mohsen, A graduate of Faculty of Science. I’m vice
+                  president of 3ommar team I was head of public relations in
+                  3ommar team and capstone project. I was a volunteer in Resala
+                  charity organization and member of project management at
+                  enactus alexandria.
                 </p>
               </SwiperSlide>
               <SwiperSlide>
@@ -282,11 +289,18 @@ export default function Home() {
                   Project Manager
                 </p>
                 <p className="primary-bg p-8 text-center leading-8 mt-10">
-                  I'm Gohar , a Computer Science student at the Faculty of
-                  Science. I have experience as a member or leader in various
-                  organizations, including Empower, Circle, 3ommar Team, Space
-                  E, Student union, and 3ommarX, and as a Project Manager at
-                  i-Code.
+                  I'm Gohar, a student in the College of Science, majoring in
+                  Computer Science. I have various roles: I work as a member of
+                  an organization called Empower, where I contribute to its
+                  activities. Additionally, I hold positions as an OC and HR
+                  member at Circle, which focuses on training and consultancy. I
+                  am also involved as a PR member for both the 3ommar Team and
+                  Space E, and I serve on their respective PR boards. In
+                  addition, I am a member of the Student Union, representing the
+                  interests of fellow students. I have the privilege of being
+                  the President of the ZeroOne Team, and I also serve as the PR
+                  Director at 3ommarX. Moreover, I am currently a trainee at
+                  iCareer and work as a Project Manager at I-Code.
                 </p>
               </SwiperSlide>
               <SwiperSlide>
@@ -302,13 +316,22 @@ export default function Home() {
                   Project Manager
                 </p>
                 <p className="primary-bg p-8 text-center leading-8 mt-10">
-                  I'm Moamen, a student at the Faculty of Science, Department of
-                  Computer Science, and I worked before that in Organization
-                  Organization member at Empower , OC and HR member at Circle
-                  for training and consultancy , PR member at 3ommar Team , PR
-                  member at Space E , PR board at 3ommar , PR board at Space E ,
-                  Member at the Student union , President of ZeroOne Team , PR
-                  Director at 3ommarX and Project manager i-Code
+                  I am Moamen Saad, a student in the College of Science,
+                  Department of Computer Science. I have been working as a
+                  social media specialist for four years, helping various
+                  organizations with their online presence. I also run my own
+                  online marketing agency called MS Marketing. Additionally, I
+                  am involved in several organizations in different roles. I am
+                  a member of Empower Hub, Orgnaizer and Human Resources At
+                  Circle for training and consultancy. I serve as a Public
+                  Relation member for 3ommar Team and Space E. I am part of the
+                  Human Resources board for 3ommar and Space E. Moreover, I hold
+                  the position of Head of the cultural and media committee at
+                  the Faculty of Science Alexandria University. Besides, I am
+                  honored to be the Vice President of ZeroOne Team and the Human
+                  Resources Director at 3ommarX. I have also gained experience
+                  as a trainee at iCareer and I am currently working as a
+                  project manager at I-Code.
                 </p>
               </SwiperSlide>
               <SwiperSlide>
@@ -324,13 +347,11 @@ export default function Home() {
                   Project Manager
                 </p>
                 <p className="primary-bg p-8 text-center leading-8 mt-10">
-                  I'm Somaya, a student at the Faculty of Science, Department of
-                  Computer Science, and I worked before that in Organization
-                  Organization member at Empower , OC and HR member at Circle
-                  for training and consultancy , PR member at 3ommar Team , PR
-                  member at Space E , PR board at 3ommar , PR board at Space E ,
-                  Member at the Student union , President of ZeroOne Team , PR
-                  Director at 3ommarX and Project manager i-Code
+                  I am Somaya, a college student studying computer science at
+                  the College of Science. In addition to my studies, I hold
+                  several positions such as General Director at 3ommarX Event ,
+                  Head of PR at Space E project, 3ommar Team, and MEU project.
+                  Moreover, I am a Project Manager at I-Code.
                 </p>
               </SwiperSlide>
               <div className="slider-controler">
