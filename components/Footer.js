@@ -79,13 +79,13 @@ const Footer = () => {
       <div>
         <p className="text-center">
           I-Code &copy; 2023, Made by{" "}
-          <span className="text-[#8e2de2]">
+          <span className="text-[#6d28d9]">
             <a
-              href="https://scorpions-store.vercel.app"
+              href="https://devlab-tech.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Scorpions Team
+              DevLab
             </a>
           </span>
         </p>
