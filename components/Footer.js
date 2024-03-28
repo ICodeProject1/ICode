@@ -81,7 +81,7 @@ const Footer = () => {
           I-Code &copy; 2023, Made by{" "}
           <span className="text-[#6d28d9]">
             <a
-              href="https://devlab-tech.com"
+              href="https://www.devlab-tech.com"
               target="_blank"
               rel="noopener noreferrer"
             >
